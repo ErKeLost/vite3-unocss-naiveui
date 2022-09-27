@@ -1,7 +1,9 @@
 <script setup lang="ts">
-const test = ref(666);
+import { darkTheme } from "naive-ui";
 </script>
 
 <template>
-  <RouterView />
+  <n-config-provider :theme="darkTheme">
+    <RouterView />
+  </n-config-provider>
 </template>

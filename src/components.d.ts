@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     Login: typeof import('./views/login/index.vue')['default']
     LoginForm: typeof import('./views/login/cpns/loginForm.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
+    NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NInput: typeof import('naive-ui')['NInput']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
