@@ -5,6 +5,7 @@ import Components from "unplugin-vue-components/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import { VitePWA } from "vite-plugin-pwa";
 import Inspect from "vite-plugin-inspect";
+import { NaiveUiResolver } from "unplugin-vue-components/resolvers";
 import Unocss from "unocss/vite";
 
 export default defineConfig({
@@ -22,7 +23,20 @@ export default defineConfig({
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      imports: ["vue", "vue-router", "@vueuse/head", "@vueuse/core"],
+      imports: [
+        "vue",
+        "vue-router",
+        "@vueuse/head",
+        "@vueuse/core",
+        {
+          "naive-ui": [
+            "useDialog",
+            "useMessage",
+            "useNotification",
+            "useLoadingBar",
+          ],
+        },
+      ],
       dts: "src/auto-imports.d.ts",
       dirs: ["src/composables", "src/store"],
       vueTemplate: true,
@@ -35,6 +49,8 @@ export default defineConfig({
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: "src/components.d.ts",
+      dirs: ["src/components", "src/views"],
+      resolvers: [NaiveUiResolver()],
     }),
 
     // https://github.com/antfu/unocss
