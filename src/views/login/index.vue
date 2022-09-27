@@ -9,7 +9,7 @@
         object-cover
         w-full
         h-full
-        src="https://w.wallhaven.cc/full/4o/wallhaven-4oq279.jpg"
+        src="https://w.wallhaven.cc/full/rr/wallhaven-rr3y61.jpg"
         alt=""
       />
     </div>
