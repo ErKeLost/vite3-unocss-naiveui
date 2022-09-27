@@ -1,6 +1,5 @@
 import path from 'path'
 import { defineConfig } from 'vite'
-import Preview from 'vite-plugin-vue-component-preview'
 import Vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -16,8 +15,6 @@ export default defineConfig({
   },
 
   plugins: [
-    Preview(),
-
     Vue({
       include: [/\.vue$/, /\.md$/],
       reactivityTransform: true,
