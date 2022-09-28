@@ -93,7 +93,7 @@ async function handleLogin() {
   width: 150px;
   height: 50px;
   border-radius: 50%;
-  background-color: #282826;
+  background-color: #7e7e7e;
   filter: blur(5px);
   animation: move1 3s ease-in-out infinite;
 }

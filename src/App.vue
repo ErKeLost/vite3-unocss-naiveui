@@ -1,11 +1,31 @@
 <script setup lang="ts">
 import { darkTheme, lightTheme } from 'naive-ui'
-// const res = computed(() => (toggleDark() ? darkTheme : undefined))
-const res = ref(lightTheme)
-function useTheme() {
-  const theme = toggleDark()
+// const res = computed(() => toggleDark())
+// const res = ref(darkTheme)
+
+// function useTheme() {
+//   console.log(res.value)
+
+//   if (res.value === darkTheme) {
+//     console.log(666)
+
+//     res.value = lightTheme
+//   } else {
+//     console.log(6999)
+
+//     res.value = darkTheme
+//   }
+// }
+// watch(res, () => {
+//   toggleDark()
+// })
+// watch(res, () => {
+//   console.log(666)
+// })
+const theme = ref(false)
+function changeTheme() {
+  theme.value = toggleDark()
   console.log(theme)
-  theme ? (res.value = darkTheme) : (res.value = lightTheme)
 }
 </script>
 
@@ -13,11 +33,11 @@ function useTheme() {
   <button
     class="icon-btn mx-2 absolute z-10 right-10 top-5 text-2xl !outline-none"
     title="toggle-dark-mode"
-    @click="useTheme"
+    @click="changeTheme()"
   >
     <div i="carbon-sun dark:carbon-moon" />
   </button>
-  <n-config-provider :theme="res">
+  <n-config-provider :theme="theme ? darkTheme : lightTheme">
     <RouterView />
   </n-config-provider>
 </template>
