@@ -24,6 +24,7 @@
       lg:flex-none
       lg:px-20
       xl:px-24
+      relative
     >
       <div flex items-center w-full h-full max-w-sm mx-auto lg:w-96>
         <LoginForm></LoginForm>

@@ -1,29 +1,29 @@
 <script setup lang="ts">
 const loginData = reactive({
-  username: "",
-  password: "",
-  loading: false,
-});
+  username: '',
+  password: '',
+  loading: false
+})
 async function handleLogin() {
-  loginData.loading = true;
-  const { loginApi } = useLogin();
+  loginData.loading = true
+  const { loginApi } = useLogin()
 
   try {
     await loginApi({
       username: loginData.username,
-      password: loginData.password,
-    });
+      password: loginData.password
+    })
   } catch (error) {
-    console.log(error);
+    console.log(error)
   } finally {
     // eslint-disable-next-line require-atomic-updates
-    loginData.loading = false;
+    loginData.loading = false
   }
 }
 </script>
 
 <template>
-  <div w-full>
+  <div w-full relative>
     <div flex justify-center>
       <div class="box">
         <div class="paopao"></div>
@@ -89,7 +89,7 @@ async function handleLogin() {
 .shadow {
   position: absolute;
   left: 70px;
-  bottom: -100px;
+  bottom: -80px;
   width: 150px;
   height: 50px;
   border-radius: 50%;

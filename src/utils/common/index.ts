@@ -1,2 +1,2 @@
-export * from "./promise";
-export * from "./globalFile";
+export * from './promise'
+export * from './globalFile'
