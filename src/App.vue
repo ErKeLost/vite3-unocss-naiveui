@@ -1,5 +1,14 @@
 <script setup lang="ts">
 import { darkTheme, lightTheme } from 'naive-ui'
+import { request } from '~/services'
+
+function signup(data: any) {
+  return request.post({
+    url: 'auth/signup',
+    data
+  })
+}
+signup({})
 // const res = computed(() => toggleDark())
 // const res = ref(darkTheme)
 

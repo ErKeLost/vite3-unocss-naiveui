@@ -2,7 +2,7 @@ import axios from 'axios'
 import type { AxiosInstance } from 'axios'
 import type { stockRequestInterceptors, stockRequestConfig } from './type'
 
-import { ElLoading } from 'element-plus'
+// import { ElLoading } from 'element-plus'
 
 const DEFAULT_LOADING = false
 
@@ -36,12 +36,11 @@ class stockRequest {
       (config) => {
         if (this.showLoading) {
           // console.log(this.showLoading, '我是loading')
-
-          this.loading = ElLoading.service({
-            lock: true,
-            text: '正在请求数据....',
-            background: 'rgba(255, 255, 255, 0.8)'
-          })
+          // this.loading = ElLoading.service({
+          //   lock: true,
+          //   text: '正在请求数据....',
+          //   background: 'rgba(255, 255, 255, 0.8)'
+          // })
         }
         return config
       },
@@ -55,11 +54,11 @@ class stockRequest {
         // 将loading移除
         // console.log(res)
         if (!res.data?.success) {
-          ElMessage({
-            message: res.data?.errorMsg,
-            type: 'error',
-            grouping: true
-          })
+          // ElMessage({
+          //   message: res.data?.errorMsg,
+          //   type: 'error',
+          //   grouping: true
+          // })
         }
         this.loading?.close()
 

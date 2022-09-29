@@ -89,5 +89,15 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-inspect
     // Visit http://localhost:3333/__inspect/ to see the inspector
     Inspect()
-  ]
+  ],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://47.95.215.156:3333',
+        changeOrigin: true,
+        // eslint-disable-next-line @typescript-eslint/no-shadow
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
+  }
 })

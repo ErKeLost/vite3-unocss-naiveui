@@ -8,8 +8,10 @@ const serviceGlobalFiles = getGlobalFileExport(serviceModules)
 
 const { VITE_SERVICE_TIME_OUT, VITE_GLOB_API_URL_PREFIX } = import.meta.env
 const request = new Request({
-  baseURL: VITE_GLOB_API_URL_PREFIX,
-  timeout: VITE_SERVICE_TIME_OUT,
+  // baseURL: VITE_GLOB_API_URL_PREFIX,
+  baseURL: '/api',
+  // timeout: VITE_SERVICE_TIME_OUT,
+  timeout: 6000,
   interceptors: {
     requestInterceptor: (config: any) => {
       // 携带token的拦截
