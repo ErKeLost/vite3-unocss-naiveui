@@ -7,7 +7,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Form: typeof import('./views/login/cpns/form.vue')['default']
     Login: typeof import('./views/login/index.vue')['default']
     LoginForm: typeof import('./views/login/cpns/loginForm.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
