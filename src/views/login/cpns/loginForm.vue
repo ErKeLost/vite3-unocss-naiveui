@@ -53,6 +53,20 @@ async function handleLogin() {
       <n-button round my-10 block size="large" @click="handleLogin"
         >登录</n-button
       >
+      <div>
+        <n-checkbox
+          size="medium"
+          label="同意 《个人信息保护政策》《服务协议》"
+        />
+      </div>
+      <div>
+        <n-divider title-placement="center"> Or </n-divider>
+      </div>
+      <div mt-20 flex justify-center gap-10 text-2xl>
+        <Twitter />
+        <Github />
+        <Vercel />
+      </div>
     </div>
   </div>
 </template>

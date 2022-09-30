@@ -7,4 +7,8 @@
   </svg>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: 'LogosTwitter'
+}
+</script>

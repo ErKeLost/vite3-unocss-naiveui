@@ -7,13 +7,18 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Github: typeof import('./components/logo/Github.vue')['default']
     Login: typeof import('./views/login/index.vue')['default']
     LoginForm: typeof import('./views/login/cpns/loginForm.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
+    NCheckbox: typeof import('naive-ui')['NCheckbox']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
+    NDivider: typeof import('naive-ui')['NDivider']
+    Netlify: typeof import('./components/logo/Netlify.vue')['default']
     NInput: typeof import('naive-ui')['NInput']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Twitter: typeof import('./components/logo/Twitter.vue')['default']
+    Vercel: typeof import('./components/logo/Vercel.vue')['default']
   }
 }
