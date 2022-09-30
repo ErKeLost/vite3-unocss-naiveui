@@ -53,7 +53,7 @@ async function handleLogin() {
       <n-button round my-10 block size="large" @click="handleLogin"
         >登录</n-button
       >
-      <div>
+      <div class="shake">
         <n-checkbox
           size="medium"
           label="同意 《个人信息保护政策》《服务协议》"
