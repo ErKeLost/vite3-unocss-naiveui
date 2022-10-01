@@ -15,10 +15,16 @@ declare module '@vue/runtime-core' {
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NDivider: typeof import('naive-ui')['NDivider']
     Netlify: typeof import('./components/logo/Netlify.vue')['default']
+    NIcon: typeof import('naive-ui')['NIcon']
     NInput: typeof import('naive-ui')['NInput']
+    NP: typeof import('naive-ui')['NP']
+    NText: typeof import('naive-ui')['NText']
+    NUpload: typeof import('naive-ui')['NUpload']
+    NUploadDragger: typeof import('naive-ui')['NUploadDragger']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Twitter: typeof import('./components/logo/Twitter.vue')['default']
+    Upload: typeof import('./components/upload/index.vue')['default']
     Vercel: typeof import('./components/logo/Vercel.vue')['default']
   }
 }

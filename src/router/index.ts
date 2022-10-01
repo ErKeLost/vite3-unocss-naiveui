@@ -6,6 +6,10 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('~/views/login/index.vue')
+  },
+  {
+    path: '/upload',
+    component: () => import('~/components/upload/index.vue')
   }
   // {
   //   path: '/:pathMatch(.*)*',
