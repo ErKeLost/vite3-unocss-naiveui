@@ -1,5 +1,5 @@
 <template>
-  <n-upload multiple directory-dnd :custom-request="customRequest" :max="5">
+  <n-upload multiple directory-dnd :custom-request="customRequest">
     <n-upload-dragger>
       <div style="margin-bottom: 12px">
         <n-icon size="48" :depth="3">
@@ -12,10 +12,13 @@
       </n-p>
     </n-upload-dragger>
   </n-upload>
+  <img :src="file.secure_url" alt="" />
 </template>
 
 <script setup lang="ts">
 import { request } from '~/services'
+const file = ref<any>('')
+const fileList = ref([])
 function upload(data) {
   return request.post({
     url: '/users/upload',
@@ -25,10 +28,12 @@ function upload(data) {
     data
   })
 }
-function customRequest(data: any) {
+async function customRequest(data: any) {
   console.log(data)
   const formdata = new FormData()
   formdata.append('file', data.file.file)
-  upload(formdata)
+  const res = await upload(formdata)
+  file.value = res
+  // fileList.value = []
 }
 </script>
