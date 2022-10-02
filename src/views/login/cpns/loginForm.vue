@@ -1,24 +1,27 @@
 <script setup lang="ts">
+const router = useRouter()
 const loginData = reactive({
   username: '',
   password: '',
   loading: false
 })
 async function handleLogin() {
-  loginData.loading = true
-  const { loginApi } = useLogin()
-
-  try {
-    await loginApi({
-      username: loginData.username,
-      password: loginData.password
-    })
-  } catch (error) {
-    console.log(error)
-  } finally {
-    // eslint-disable-next-line require-atomic-updates
-    loginData.loading = false
-  }
+  router.push({
+    path: '/home/status'
+  })
+  // loginData.loading = true
+  // const { loginApi } = useLogin()
+  // try {
+  //   await loginApi({
+  //     username: loginData.username,
+  //     password: loginData.password
+  //   })
+  // } catch (error) {
+  //   console.log(error)
+  // } finally {
+  //   // eslint-disable-next-line require-atomic-updates
+  //   loginData.loading = false
+  // }
 }
 </script>
 
