@@ -8,13 +8,13 @@ function signup(data: any) {
     data
   })
 }
-signup({
-  username: '123',
-  password: '132',
-  email: 'iuo@qq.com',
-  name: '234',
-  profileImage: 'http://'
-})
+// signup({
+//   username: '123',
+//   password: '132',
+//   email: 'iuo@qq.com',
+//   name: '234',
+//   profileImage: 'http://'
+// })
 // const res = computed(() => toggleDark())
 // const res = ref(darkTheme)
 

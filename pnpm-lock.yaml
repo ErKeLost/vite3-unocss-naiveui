@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@antfu/eslint-config': ^0.27.0
   '@iconify-json/carbon': ^1.1.8
+  '@iconify/json': ^2.1.116
   '@types/nprogress': ^0.2.0
   '@unocss/reset': ^0.45.23
   '@vitejs/plugin-vue': ^3.1.0
@@ -13,15 +14,18 @@ specifiers:
   cross-env: ^7.0.3
   eslint: ^8.24.0
   eslint-config-relaxed-vue: ^1.0.9
+  esno: ^0.16.3
   https-localhost: ^4.7.1
   naive-ui: ^2.33.3
   nprogress: ^0.2.0
   pinia: ^2.0.22
   pnpm: ^7.12.2
   prettier: ^2.7.1
+  rimraf: ^3.0.2
   typescript: ^4.8.3
   unocss: ^0.45.25
   unplugin-auto-import: ^0.11.2
+  unplugin-icons: ^0.14.11
   unplugin-vue-components: ^0.22.7
   vite: ^3.1.3
   vite-plugin-inspect: ^0.7.3
@@ -46,18 +50,22 @@ dependencies:
 devDependencies:
   '@antfu/eslint-config': 0.27.0_7ilbxdl5iguzcjriqqcg2m5cku
   '@iconify-json/carbon': 1.1.8
+  '@iconify/json': 2.1.116
   '@types/nprogress': 0.2.0
   '@vitejs/plugin-vue': 3.1.0_vite@3.1.3+vue@3.2.39
   cross-env: 7.0.3
   eslint: 8.24.0
   eslint-config-relaxed-vue: 1.0.9_7ilbxdl5iguzcjriqqcg2m5cku
+  esno: 0.16.3
   https-localhost: 4.7.1
   naive-ui: 2.33.3_vue@3.2.39
   pnpm: 7.12.2
   prettier: 2.7.1
+  rimraf: 3.0.2
   typescript: 4.8.3
   unocss: 0.45.25_vite@3.1.3
   unplugin-auto-import: 0.11.2_@vueuse+core@9.3.0
+  unplugin-icons: 0.14.11
   unplugin-vue-components: 0.22.7_vue@3.2.39
   vite: 3.1.3
   vite-plugin-inspect: 0.7.4_vite@3.1.3
@@ -1338,6 +1346,27 @@ packages:
     resolution: {integrity: sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==}
     dev: true
 
+  /@esbuild-kit/cjs-loader/2.3.3:
+    resolution: {integrity: sha512-Rt4O1mXlPEDVxvjsHLgbtHVdUXYK9C1/6ThpQnt7FaXIjUOsI6qhHYMgALhNnlIMZffag44lXd6Dqgx3xALbpQ==}
+    dependencies:
+      '@esbuild-kit/core-utils': 2.3.2
+      get-tsconfig: 4.2.0
+    dev: true
+
+  /@esbuild-kit/core-utils/2.3.2:
+    resolution: {integrity: sha512-aQwy1Hdd02ymjyMyyrhtyuZGv5W+mVZmj3DTKFV0TnB1AUgMBV40tXySpsGySe8vLvSe0c0TaqTc2FUo8/YlNQ==}
+    dependencies:
+      esbuild: 0.15.9
+      source-map-support: 0.5.21
+    dev: true
+
+  /@esbuild-kit/esm-loader/2.4.2:
+    resolution: {integrity: sha512-N9dPKAj8WOx6djVnStgILWXip4fjDcBk9L7azO0/uQDpu8Ee0eaL78mkN4Acid9BzvNAKWwdYXFJZnsVahNEew==}
+    dependencies:
+      '@esbuild-kit/core-utils': 2.3.2
+      get-tsconfig: 4.2.0
+    dev: true
+
   /@esbuild/android-arm/0.15.9:
     resolution: {integrity: sha512-VZPy/ETF3fBG5PiinIkA0W/tlsvlEgJccyN2DzWZEl0DlVKRbu91PvY2D6Lxgluj4w9QtYHjOWjAT44C+oQ+EQ==}
     engines: {node: '>=12'}
@@ -1406,6 +1435,13 @@ packages:
     resolution: {integrity: sha512-aSoMgvZyvIXadLbMXcfS+qy8CVxSExvvp8Vd/nCrupLFc0KLKSukRInnVNc63zaHqoe1NBf5xUrgfyRYYfaKWQ==}
     dependencies:
       '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify/json/2.1.116:
+    resolution: {integrity: sha512-1w8S1YkZxeKWA5j9wcZPaBDuDRRjOQB2EPmFPwuSkNnnuvPPAEqyoDfoAno/b1WeJfrcfUlxIf3AE1BAdNqeZA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+      pathe: 0.3.8
     dev: true
 
   /@iconify/types/2.0.0:
@@ -3626,6 +3662,13 @@ packages:
       - supports-color
     dev: true
 
+  /esno/0.16.3:
+    resolution: {integrity: sha512-6slSBEV1lMKcX13DBifvnDFpNno5WXhw4j/ff7RI0y51BZiDqEe5dNhhjhIQ3iCOQuzsm2MbVzmwqbN78BBhPg==}
+    hasBin: true
+    dependencies:
+      tsx: 3.9.0
+    dev: true
+
   /espree/6.2.1:
     resolution: {integrity: sha512-ysCxRQY3WaXJz9tdbWOwuWr5Y/XrPTGX9Kiz3yoUXwW0VZ4w30HTkQLaGx/+ttFjF8i+ACbArnB4ce68a9m5hw==}
     engines: {node: '>=6.0.0'}
@@ -4006,6 +4049,10 @@ packages:
     dependencies:
       call-bind: 1.0.2
       get-intrinsic: 1.1.3
+    dev: true
+
+  /get-tsconfig/4.2.0:
+    resolution: {integrity: sha512-X8u8fREiYOE6S8hLbq99PeykTDoLVnxvF4DjWKJmz9xy2nNRdUcV8ZN9tniJFeKyTU3qnC9lL8n4Chd6LmVKHg==}
     dev: true
 
   /glob-parent/5.1.2:
@@ -6536,6 +6583,17 @@ packages:
       typescript: 4.8.3
     dev: true
 
+  /tsx/3.9.0:
+    resolution: {integrity: sha512-ofxsE+qjqCYYq4UBt5khglvb+ESgxef1YpuNcdQI92kvcAT2tZVrnSK3g4bRXTUhLmKHcC5q8vIZA47os/stng==}
+    hasBin: true
+    dependencies:
+      '@esbuild-kit/cjs-loader': 2.3.3
+      '@esbuild-kit/core-utils': 2.3.2
+      '@esbuild-kit/esm-loader': 2.4.2
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
   /type-check/0.3.2:
     resolution: {integrity: sha512-ZCmOJdvOWDBYJlzAoFkC+Q0+bUyEOS1ltgp1MGU03fqHG+dbi9tBFU2Rd9QKiDZFAYrhPh2JUf7rZRIuHRKtOg==}
     engines: {node: '>= 0.8.0'}
@@ -6789,6 +6847,34 @@ packages:
       magic-string: 0.26.4
       unimport: 0.6.7
       unplugin: 0.9.6
+    dev: true
+
+  /unplugin-icons/0.14.11:
+    resolution: {integrity: sha512-szr6QA1ILT4RrJCmtvW41m2KPwUCCIx8QNgwEmTehvzEkSLDrdEaBhKGMWb/qTe5/zwnfwrDGcFT/6pGOSHJcA==}
+    peerDependencies:
+      '@svgr/core': '>=5.5.0'
+      '@vue/compiler-sfc': ^3.0.2
+      vue-template-compiler: ^2.6.12
+      vue-template-es2015-compiler: ^1.9.0
+    peerDependenciesMeta:
+      '@svgr/core':
+        optional: true
+      '@vue/compiler-sfc':
+        optional: true
+      vue-template-compiler:
+        optional: true
+      vue-template-es2015-compiler:
+        optional: true
+    dependencies:
+      '@antfu/install-pkg': 0.1.1
+      '@antfu/utils': 0.5.2
+      '@iconify/utils': 2.0.0
+      debug: 4.3.4
+      kolorist: 1.6.0
+      local-pkg: 0.4.2
+      unplugin: 0.9.6
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /unplugin-vue-components/0.22.7_vue@3.2.39:

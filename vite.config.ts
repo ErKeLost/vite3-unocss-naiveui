@@ -1,4 +1,5 @@
 import path from 'path'
+import { fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
@@ -7,6 +8,25 @@ import { VitePWA } from 'vite-plugin-pwa'
 import Inspect from 'vite-plugin-inspect'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import Unocss from 'unocss/vite'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import { FileSystemIconLoader } from 'unplugin-icons/loaders'
+
+/**
+ * 解析路径
+ * @param basePath - 基础路径
+ */
+export function resolvePath(rootPath: string, basePath: string) {
+  const root = fileURLToPath(new URL(rootPath, basePath))
+  const src = `${root}src`
+
+  return {
+    root,
+    src
+  }
+}
+
+const vitePath = resolvePath('../../../', import.meta.url)
 
 export default defineConfig({
   resolve: {
@@ -50,9 +70,23 @@ export default defineConfig({
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
       dirs: ['src/components', 'src/views'],
-      resolvers: [NaiveUiResolver()]
+      resolvers: [
+        NaiveUiResolver(),
+        IconsResolver({
+          customCollections: ['custom'],
+          componentPrefix: 'icon'
+        })
+      ]
     }),
-
+    Icons({
+      compiler: 'vue3',
+      customCollections: {
+        custom: FileSystemIconLoader(`${vitePath.src}/assets/svg`)
+      },
+      scale: 1,
+      defaultClass: 'inline-block',
+      autoInstall: true
+    }),
     // https://github.com/antfu/unocss
     // see unocss.config.ts for config
     Unocss(),

@@ -11,9 +11,11 @@ import {
 
 export default defineConfig({
   shortcuts: [
+    ['dark-white', 'dark:color-white'],
+    ['tran', 'transition ease-in-out duration-350'],
     [
       'btn',
-      'px-4 py-1 rounded inline-block bg-teal-700 text-white cursor-pointer hover:bg-teal-800 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'
+      'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'
     ],
     [
       'icon-btn',
@@ -24,8 +26,7 @@ export default defineConfig({
     presetUno(),
     presetAttributify(),
     presetIcons({
-      scale: 1.2,
-      warn: true
+      scale: 1.2
     }),
     presetTypography(),
     presetWebFonts({
@@ -36,6 +37,5 @@ export default defineConfig({
       }
     })
   ],
-  transformers: [transformerDirectives(), transformerVariantGroup()],
-  safelist: 'prose prose-sm m-auto text-left'.split(' ')
+  transformers: [transformerDirectives(), transformerVariantGroup()]
 })
