@@ -22,7 +22,7 @@ const isAuthLoading = ref(true)
 
           <!-- Main content -->
           <main class="col-span-12 md:col-span-8 xl:col-span-6">
-            <!-- <router-view /> -->
+            <router-view />
           </main>
 
           <!-- Right Sidebar -->

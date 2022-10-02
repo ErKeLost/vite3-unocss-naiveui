@@ -13,7 +13,14 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/home',
-    component: () => import('~/views/home/index.vue')
+    redirect: '/home/status',
+    component: () => import('~/views/home/index.vue'),
+    children: [
+      {
+        path: 'status',
+        component: () => import('~/views/dynamic/index.vue')
+      }
+    ]
   }
   // {
   //   path: '/:pathMatch(.*)*',
