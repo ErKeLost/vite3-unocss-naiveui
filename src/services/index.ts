@@ -11,7 +11,7 @@ const request = new Request({
   // baseURL: VITE_GLOB_API_URL_PREFIX,
   baseURL: '/api',
   // timeout: VITE_SERVICE_TIME_OUT,
-  timeout: 6000,
+  timeout: 60000,
   interceptors: {
     requestInterceptor: (config: any) => {
       // 携带token的拦截
