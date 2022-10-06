@@ -56,3 +56,5 @@ function changeTheme() {
     <RouterView />
   </n-config-provider>
 </template>
+
+<style lang="scss"></style>

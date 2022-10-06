@@ -1,4 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LoginForm from './cpns/loginForm.vue'
+import RegisterForm from './cpns/registerForm.vue'
+import { useAuthStore } from '~/store'
+
+const { isLoginType } = storeToRefs(useAuthStore())
+</script>
 
 <template>
   <div flex h-screen>
@@ -27,10 +33,21 @@
       relative
     >
       <div flex items-center w-full h-full max-w-sm mx-auto lg:w-96>
-        <LoginForm></LoginForm>
+        <transition name="bounceInDown" mode="out-in" appear>
+          <component
+            :is="isLoginType === true ? LoginForm : RegisterForm"
+          ></component>
+        </transition>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.bounceInDown-enter-active {
+  animation: bounceInDown 0.5s ease-in;
+}
+.bounceInDown-leave-active {
+  animation: bounceInDown 0.5s ease-in reverse;
+}
+</style>

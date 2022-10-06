@@ -50,6 +50,7 @@ declare module '@vue/runtime-core' {
     Page: typeof import('./components/Auth/Page.vue')['default']
     PreviewCard: typeof import('./components/SideBarRight/PreviewCard/index.vue')['default']
     PreviewCardItem: typeof import('./components/SideBarRight/PreviewCard/PreviewCardItem.vue')['default']
+    RegisterForm: typeof import('./views/login/cpns/registerForm.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Search: typeof import('./views/search/index.vue')['default']

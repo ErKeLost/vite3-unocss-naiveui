@@ -7,6 +7,8 @@ interface loginFormType {
 export const useAuthStore = defineStore(
   'auth-store',
   () => {
+    // 登录动画
+    const isLoginType = ref<boolean>(true)
     // 登录
     const loginForm: loginFormType | null = reactive({
       username: '',
@@ -19,7 +21,8 @@ export const useAuthStore = defineStore(
     }
     return {
       loginForm,
-      useLogin
+      useLogin,
+      isLoginType
     }
   },
   {

@@ -2,6 +2,7 @@ import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 // eslint-disable-next-line import/no-unresolved
 import 'uno.css'
+import 'animate.css'
 // import { createHead } from "@vueuse/head";
 import Router from './router'
 import App from './App.vue'

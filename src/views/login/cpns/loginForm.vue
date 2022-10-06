@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useAuthStore } from '@/store'
 
+const { isLoginType } = storeToRefs(useAuthStore())
 const shakeChecked = ref<boolean>(false)
 const judgeShakeClass = ref<boolean>(false)
 const authStore = useAuthStore()
@@ -59,7 +60,14 @@ async function handleLogin() {
         />
       </div>
       <div flex justify-between my-8>
-        <a border-b border-dark border-b-dashed href="#">没有账号 ？ 去注册</a>
+        <a
+          border-b
+          border-dark
+          border-b-dashed
+          href="#"
+          @click="isLoginType = false"
+          >没有账号 ？ 去注册</a
+        >
         <a border-b border-dark border-b-dashed href="#">忘记密码 </a>
       </div>
       <div>
