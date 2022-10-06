@@ -8,9 +8,6 @@ const authStore = useAuthStore()
 const router = useRouter()
 
 async function handleLogin() {
-  // router.push({
-  //   path: '/home/status'
-  // })
   if (!shakeChecked.value) {
     judgeShakeClass.value = true
   }
@@ -18,6 +15,9 @@ async function handleLogin() {
     judgeShakeClass.value = false
   }, 800)
   await authStore.useLogin()
+  router.push({
+    path: '/home/status'
+  })
 }
 </script>
 

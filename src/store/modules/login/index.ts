@@ -18,6 +18,7 @@ export const useAuthStore = defineStore(
     async function useLogin() {
       const loginRes = await signin(loginForm)
       console.log(loginRes)
+      localStorage.setItem('access_token', loginRes.access_token)
     }
 
     // 注册

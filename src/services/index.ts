@@ -15,11 +15,11 @@ const request = new Request({
   interceptors: {
     requestInterceptor: (config: any) => {
       // 携带token的拦截
-      const token = localCache.getCache('token')
+      const token = localStorage.getItem('access_token')
       // console.log(token)
 
       if (token) {
-        config.headers!.Authorization = `${token}`
+        config.headers!.Authorization = `Bearer ${token}`
       }
       return config
     },

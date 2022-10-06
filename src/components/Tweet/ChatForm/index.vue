@@ -43,13 +43,12 @@ const props = defineProps({
 async function handleFormSubmit(data) {
   loading.value = true
   try {
-    const response = await postTweet({
-      text: data.text,
-      mediaFiles: data.mediaFiles,
-      replyTo: props.replyTo?.id
-    })
-
-    emits('onSuccess', response.tweet)
+    // const response = await postTweet({
+    //   text: data.text,
+    //   mediaFiles: data.mediaFiles,
+    //   replyTo: props.replyTo?.id
+    // })
+    emits('onSuccess', data)
   } catch (error) {
     console.log(error)
   } finally {
