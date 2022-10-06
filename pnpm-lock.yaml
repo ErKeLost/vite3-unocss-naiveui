@@ -23,7 +23,6 @@ specifiers:
   prettier: ^2.7.1
   rimraf: ^3.0.2
   sass: ^1.55.0
-  scss: ^0.2.4
   typescript: ^4.8.3
   unocss: ^0.45.25
   unplugin-auto-import: ^0.11.2
@@ -65,7 +64,6 @@ devDependencies:
   prettier: 2.7.1
   rimraf: 3.0.2
   sass: 1.55.0
-  scss: 0.2.4
   typescript: 4.8.4
   unocss: 0.45.26_vite@3.1.4
   unplugin-auto-import: 0.11.2_@vueuse+core@9.3.0
@@ -4786,11 +4784,6 @@ packages:
       undici: 5.11.0
     dev: true
 
-  /ometa/0.2.2:
-    resolution: {integrity: sha512-LZuoK/yjU3FvrxPjUXUlZ1bavCfBPqauA7fsNdwi+AVhRdyk2IzgP3JRnevvjzQ6fKHdUw8YISshf53FmpHrng==}
-    engines: {node: '>= 0.2.0'}
-    dev: true
-
   /on-finished/2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
     engines: {node: '>= 0.8'}
@@ -5808,13 +5801,6 @@ packages:
       chokidar: 3.5.3
       immutable: 4.1.0
       source-map-js: 1.0.2
-    dev: true
-
-  /scss/0.2.4:
-    resolution: {integrity: sha512-4u8V87F+Q/upVhUmhPnB4C1R11xojkRkWjExL2v0CX2EXTg18VrKd+9JWoeyCp2VEMdSpJsyAvVU+rVjogh51A==}
-    engines: {node: '>= 0.2.0'}
-    dependencies:
-      ometa: 0.2.2
     dev: true
 
   /scule/0.3.2:
