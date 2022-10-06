@@ -1,27 +1,22 @@
 <script setup lang="ts">
+import { useAuthStore } from '@/store'
+
+const shakeChecked = ref<boolean>(false)
+const judgeShakeClass = ref<boolean>(false)
+const authStore = useAuthStore()
 const router = useRouter()
-const loginData = reactive({
-  username: '',
-  password: '',
-  loading: false
-})
+
 async function handleLogin() {
-  router.push({
-    path: '/home/status'
-  })
-  // loginData.loading = true
-  // const { loginApi } = useLogin()
-  // try {
-  //   await loginApi({
-  //     username: loginData.username,
-  //     password: loginData.password
-  //   })
-  // } catch (error) {
-  //   console.log(error)
-  // } finally {
-  //   // eslint-disable-next-line require-atomic-updates
-  //   loginData.loading = false
-  // }
+  // router.push({
+  //   path: '/home/status'
+  // })
+  if (!shakeChecked.value) {
+    judgeShakeClass.value = true
+  }
+  setTimeout(() => {
+    judgeShakeClass.value = false
+  }, 800)
+  await authStore.useLogin()
 }
 </script>
 
@@ -39,7 +34,7 @@ async function handleLogin() {
     <div pt-5>
       <span block my-3>Username</span>
       <n-input
-        v-model:value="loginData.username"
+        v-model:value="authStore.loginForm.username"
         type="text"
         round
         size="large"
@@ -47,7 +42,7 @@ async function handleLogin() {
       />
       <span block my-3>Password</span>
       <n-input
-        v-model:value="loginData.password"
+        v-model:value="authStore.loginForm.password"
         type="password"
         round
         size="large"
@@ -56,11 +51,16 @@ async function handleLogin() {
       <n-button round my-10 block size="large" @click="handleLogin"
         >登录</n-button
       >
-      <div class="shake">
+      <div :class="{ shake: judgeShakeClass }">
         <n-checkbox
+          v-model:checked="shakeChecked"
           size="medium"
           label="同意 《个人信息保护政策》《服务协议》"
         />
+      </div>
+      <div flex justify-between my-8>
+        <a border-b border-dark border-b-dashed href="#">没有账号 ？ 去注册</a>
+        <a border-b border-dark border-b-dashed href="#">忘记密码 </a>
       </div>
       <div>
         <n-divider title-placement="center"> Or </n-divider>

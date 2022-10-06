@@ -6,7 +6,7 @@ import { getGlobalFileExport } from '~/utils/common'
 const serviceModules = import.meta.glob('./**/*.ts', { eager: true })
 const serviceGlobalFiles = getGlobalFileExport(serviceModules)
 
-const { VITE_SERVICE_TIME_OUT, VITE_GLOB_API_URL_PREFIX } = import.meta.env
+// const { VITE_SERVICE_TIME_OUT, VITE_GLOB_API_URL_PREFIX } = import.meta.env
 const request = new Request({
   // baseURL: VITE_GLOB_API_URL_PREFIX,
   baseURL: '/api',

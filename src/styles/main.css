@@ -38,7 +38,7 @@ html.dark {
   text-align: center;
   border: 1px solid black;
 }
-.shake:hover {
+.shake {
   animation: shake 800ms ease-in-out;
 }
 @keyframes shake {

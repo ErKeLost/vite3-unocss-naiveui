@@ -31,7 +31,8 @@ const vitePath = resolvePath('../../../', import.meta.url)
 export default defineConfig({
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`
+      '~/': `${path.resolve(__dirname, 'src')}/`,
+      '@/': `${path.resolve(__dirname, 'src')}/`
     }
   },
 
@@ -46,6 +47,7 @@ export default defineConfig({
       imports: [
         'vue',
         'vue-router',
+        'pinia',
         '@vueuse/head',
         '@vueuse/core',
         {
