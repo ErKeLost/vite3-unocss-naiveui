@@ -19,10 +19,24 @@ export const useAuthStore = defineStore(
       const loginRes = await signin(loginForm)
       console.log(loginRes)
     }
+
+    // 注册
+    const registerFrom: any = reactive({
+      username: '',
+      password: '',
+      email: ''
+    })
+
+    async function useRegister() {
+      const registerRes = await signup(registerFrom)
+      console.log(registerRes)
+    }
     return {
       loginForm,
       useLogin,
-      isLoginType
+      isLoginType,
+      registerFrom,
+      useRegister
     }
   },
   {

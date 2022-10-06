@@ -9,7 +9,8 @@ export function signin(data: any) {
 
 export function signup(data: any) {
   return request.post({
-    url: '/auth/signup'
+    url: '/auth/signup',
+    data
   })
 }
 
