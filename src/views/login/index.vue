@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { useAuthStore } from '@/store'
 import LoginForm from './cpns/loginForm.vue'
 import RegisterForm from './cpns/registerForm.vue'
-import { useAuthStore } from '~/store'
 
 const { isLoginType } = storeToRefs(useAuthStore())
 </script>
