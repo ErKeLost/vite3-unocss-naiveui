@@ -5,7 +5,7 @@
         <Title>Home / Twitter</Title>
       </Head> -->
 
-      <div class="border-b">
+      <div class="border-b dark:border-gray-600">
         <ChatForm :user="user" @on-success="handleFormSuccess" />
       </div>
 

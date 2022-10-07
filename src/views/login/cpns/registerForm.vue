@@ -50,6 +50,7 @@ async function handleLogin() {
         <n-button w-35 @click="handleLogin">注册</n-button>
         <a
           border-b
+          dark:border-gray-600
           border-dark
           border-b-dashed
           href="#"

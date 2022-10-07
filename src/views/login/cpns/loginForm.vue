@@ -62,13 +62,16 @@ async function handleLogin() {
       <div flex justify-between my-8>
         <a
           border-b
+          dark:border-gray-600
           border-dark
           border-b-dashed
           href="#"
           @click="isLoginType = false"
           >没有账号 ？ 去注册</a
         >
-        <a border-b border-dark border-b-dashed href="#">忘记密码 </a>
+        <a border-b dark:border-gray-600 border-dark border-b-dashed href="#"
+          >忘记密码
+        </a>
       </div>
       <div>
         <n-divider title-placement="center"> Or </n-divider>

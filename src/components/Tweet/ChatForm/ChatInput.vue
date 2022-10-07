@@ -5,7 +5,7 @@
         <img
           src="https://w.wallhaven.cc/full/57/wallhaven-571998.png"
           alt=""
-          class="inline-block w-10 h-10 rounded-full"
+          class="inline-block w-10 h-10 rounded-full object-cover"
         />
       </div>
 

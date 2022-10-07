@@ -6,7 +6,7 @@ const props = defineProps<{
 
 <template>
   <div
-    dark:border-blue-100
+    dark:border-gray-600
     overflow-hidden
     m-2
     border
@@ -14,7 +14,7 @@ const props = defineProps<{
     dark:bg-black
     rounded-2xl
   >
-    <h1 p-3 text-xl font-extrabold border-b>
+    <h1 p-3 text-xl font-extrabold border-b dark:border-gray-600>
       {{ title }}
     </h1>
     <slot></slot>

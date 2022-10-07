@@ -85,13 +85,16 @@ const props = defineProps({
       @click="emits('onLogout')"
     >
       <div class="flex flex-row">
-        <img :src="props.user?.profileImage" class="w-10 h-10 rounded-full" />
+        <img
+          :src="props.user?.profileImage"
+          class="w-10 h-10 rounded-full object-cover"
+        />
         <div class="flex-col hidden ml-2 xl:block">
           <h1 class="text-sm font-bold text-gray-800 dark:text-white">
             {{ user?.name }}
           </h1>
           <p class="text-sm text-gray-400">
-            {{ user?.handle }}
+            {{ user?.email }}
           </p>
         </div>
       </div>

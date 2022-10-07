@@ -7,7 +7,7 @@
       v-for="tweet in props.tweets"
       v-else
       :key="tweet.id"
-      class="pb-4 border-b cursor-pointer hover:bg-gray-100 dark:hover:bg-dim-300"
+      class="pb-4 border-b dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-dim-300"
       :class="[, defaultTransition]"
       @click.native="redirect(tweet)"
     >

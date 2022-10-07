@@ -1,7 +1,11 @@
 <template>
   <div class="flex p-4">
     <div>
-      <img class="w-10 h-10 rounded-full" :src="author.profileImage" alt="" />
+      <img
+        class="w-10 h-10 rounded-full object-cover"
+        :src="author.profileImage"
+        alt=""
+      />
     </div>
 
     <div class="ml-3">
