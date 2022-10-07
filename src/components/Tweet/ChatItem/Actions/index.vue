@@ -1,44 +1,44 @@
 <template>
   <div class="flex items-center justify-around w-full">
-    <ActionsIcon color="blue" @on-click="emits('onCommentClick')" :size="size">
+    <ActionIcon color="blue" @on-click="emits('onCommentClick')" :size="size">
       <template v-slot:icon="{ classes }">
-        <ChatIcon :class="classes" />
+        <IconPhChatTeardropTextFill text-2xl :class="classes" />
       </template>
 
       <template v-if="showStats" v-slot:default>
         {{ props.tweet.repliesCount }}
       </template>
-    </ActionsIcon>
+    </ActionIcon>
 
-    <ActionsIcon color="green" :size="size">
+    <ActionIcon color="green" :size="size">
       <template v-slot:icon="{ classes }">
-        <RefreshIcon :class="classes" />
+        <IconIcTwotoneRefresh text-2xl :class="classes" />
       </template>
 
       <template v-if="showStats" v-slot:default>
         {{ generateRandomNumber() }}
       </template>
-    </ActionsIcon>
+    </ActionIcon>
 
-    <ActionsIcon color="red" :size="size">
+    <ActionIcon color="red" :size="size">
       <template v-slot:icon="{ classes }">
-        <HeartIcon :class="classes" />
+        <IconBiHeart text-2xl :class="classes" />
       </template>
 
       <template v-if="showStats" v-slot:default>
         {{ generateRandomNumber() }}
       </template>
-    </ActionsIcon>
+    </ActionIcon>
 
-    <ActionsIcon color="blue" :size="size">
+    <ActionIcon color="blue" :size="size">
       <template v-slot:icon="{ classes }">
-        <UploadIcon :class="classes" />
+        <IconIcBaselineUpload text-2xl :class="classes" />
       </template>
 
       <template v-if="showStats" v-slot:default>
         {{ generateRandomNumber() }}
       </template>
-    </ActionsIcon>
+    </ActionIcon>
   </div>
 </template>
 <script setup>

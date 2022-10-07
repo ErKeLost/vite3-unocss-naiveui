@@ -7,6 +7,26 @@ const props = defineProps({
     required: true
   }
 })
+const options = [
+  {
+    label: '个人设置',
+    key: 'editProfile',
+    props: {
+      onClick: () => {
+        message.success('Good!')
+      }
+    }
+  },
+  {
+    label: '退出登录',
+    key: 'logout',
+    props: {
+      onClick: () => {
+        message.success('Good!')
+      }
+    }
+  }
+]
 </script>
 
 <template>
@@ -80,32 +100,42 @@ const props = defineProps({
         </UIButton>
       </div>
     </div>
-    <div
-      class="flex tran flex-row items-center justify-center px-2 py-2 mx-auto mt-auto mb-5 rounded-full cursor-pointer w-14 xl:w-full hover:bg-gray-100 dark:hover:bg-dim-800"
-      @click="emits('onLogout')"
-    >
-      <div class="flex flex-row">
-        <img
-          :src="props.user?.profileImage"
-          class="w-10 h-10 rounded-full object-cover"
-        />
-        <div class="flex-col hidden ml-2 xl:block">
-          <h1 class="text-sm font-bold text-gray-800 dark:text-white">
-            {{ user?.name }}
-          </h1>
-          <p class="text-sm text-gray-400">
-            {{ user?.email }}
-          </p>
-        </div>
-      </div>
 
-      <!-- ICON -->
-      <div class="hidden ml-auto xl:block">
-        <div class="w-6 h-6">
-          <ChevronDownIcon />
+    <n-dropdown
+      border-rounded
+      rounded-5
+      w-50
+      text-center
+      trigger="click"
+      :options="options"
+    >
+      <div
+        class="flex tran flex-row items-center justify-center px-2 py-2 mx-auto mt-auto mb-5 rounded-full cursor-pointer w-14 xl:w-full hover:bg-gray-100 dark:hover:bg-dim-800"
+        @click="emits('onLogout')"
+      >
+        <div class="flex flex-row">
+          <img
+            :src="props.user?.profileImage"
+            class="w-10 h-10 rounded-full object-cover"
+          />
+          <div class="flex-col hidden ml-2 xl:block">
+            <h1 class="text-sm font-bold text-gray-800 dark:text-white">
+              {{ user?.name }}
+            </h1>
+            <p class="text-sm text-gray-400">
+              <n-ellipsis style="max-width: 100px">
+                {{ user?.email }}
+              </n-ellipsis>
+            </p>
+          </div>
+        </div>
+
+        <!-- ICON -->
+        <div class="hidden ml-auto xl:block">
+          <IconIcBaselineKeyboardArrowDown w-8 h-8 text-gray />
         </div>
       </div>
-    </div>
+    </n-dropdown>
   </div>
 </template>
 

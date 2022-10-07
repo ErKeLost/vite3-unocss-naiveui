@@ -13,7 +13,7 @@
       <div
         v-for="image in tweet.mediaFiles"
         :key="image.id"
-        class="flex my-3 mr-2 border-2 rounded-2xl"
+        class="flex my-3 mr-6 border-2 dark:border-gray-600 rounded-2xl"
       >
         <img :src="image.url" class="w-full rounded-2xl" />
       </div>
