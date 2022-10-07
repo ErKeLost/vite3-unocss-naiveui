@@ -1,4 +1,10 @@
-import { signin, signup, logout, refreshToken } from '@/services/modules'
+import {
+  signin,
+  signup,
+  logout,
+  refreshToken,
+  getUserInfo
+} from '@/services/modules'
 
 interface loginFormType {
   username: string
@@ -21,6 +27,16 @@ export const useAuthStore = defineStore(
       localStorage.setItem('access_token', loginRes.access_token)
     }
 
+    // 用户信息
+
+    const userInfo = ref({})
+
+    async function useUserInfo() {
+      const res = await getUserInfo()
+      console.log(res)
+      userInfo.value = res
+    }
+
     // 注册
     const registerFrom: any = reactive({
       username: '',
@@ -37,7 +53,9 @@ export const useAuthStore = defineStore(
       useLogin,
       isLoginType,
       registerFrom,
-      useRegister
+      useRegister,
+      useUserInfo,
+      userInfo
     }
   },
   {

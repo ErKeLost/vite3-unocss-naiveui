@@ -6,3 +6,9 @@ export function getReleaseDynamic(data: any) {
     data
   })
 }
+
+export function getAllDynamic() {
+  return request.get({
+    url: '/dynamic/getDynamic'
+  })
+}

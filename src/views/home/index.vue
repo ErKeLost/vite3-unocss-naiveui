@@ -1,6 +1,8 @@
 <script setup lang="ts">
-const user = ref('')
-const isAuthLoading = ref(true)
+import { useAuthStore } from '@/store'
+const { useUserInfo } = useAuthStore()
+const { userInfo } = storeToRefs(useAuthStore())
+useUserInfo()
 </script>
 
 <template>
@@ -16,7 +18,7 @@ const isAuthLoading = ref(true)
           <!-- Left sidebar -->
           <div class="hidden md:block xs-col-span-1 xl:col-span-2">
             <div class="sticky top-0">
-              <SideBarLeft />
+              <SideBarLeft :user="userInfo" />
             </div>
           </div>
 

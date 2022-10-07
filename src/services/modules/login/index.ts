@@ -21,3 +21,9 @@ export function logout(data: any) {
 }
 
 export function refreshToken() {}
+
+export function getUserInfo() {
+  return request.get({
+    url: '/user/getUserInfo'
+  })
+}

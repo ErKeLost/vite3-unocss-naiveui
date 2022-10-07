@@ -9,13 +9,14 @@
         <ChatForm :user="user" @on-success="handleFormSuccess" />
       </div>
 
-      <ListFeed :tweets="homeTweets" />
+      <ListFeed :tweets="dynamicList" />
     </MainSection>
   </div>
 </template>
 <script setup>
 import { useDynamicStore } from '@/store'
-const { releaseDynamic } = useDynamicStore()
+const { getAllDynamicList, releaseDynamic } = useDynamicStore()
+const { dynamicList } = storeToRefs(useDynamicStore())
 async function handleFormSuccess(data) {
   const form = new FormData()
 
@@ -27,4 +28,9 @@ async function handleFormSuccess(data) {
   })
   await releaseDynamic(form)
 }
+async function getAllDynamicListFn() {
+  await getAllDynamicList()
+  console.log(dynamicList)
+}
+getAllDynamicListFn()
 </script>
