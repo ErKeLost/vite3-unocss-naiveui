@@ -7,7 +7,6 @@
         {{ props.title }}
       </h2>
     </div>
-
     <div
       v-if="props.loading"
       class="flex items-center justify-center p-4 border-b dark:border-gray-600"

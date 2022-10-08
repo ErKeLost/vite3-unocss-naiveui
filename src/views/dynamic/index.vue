@@ -15,6 +15,7 @@
 </template>
 <script setup>
 import { useDynamicStore } from '@/store'
+const loading = ref(false)
 const { getAllDynamicList, releaseDynamic } = useDynamicStore()
 const { dynamicList } = storeToRefs(useDynamicStore())
 async function handleFormSuccess(data) {
@@ -27,9 +28,12 @@ async function handleFormSuccess(data) {
     form.append('file', mediaFile)
   })
   await releaseDynamic(form)
+  await getAllDynamicListFn()
 }
 async function getAllDynamicListFn() {
+  loading.value = true
   await getAllDynamicList()
+  loading.value = false
   console.log(dynamicList)
 }
 getAllDynamicListFn()
