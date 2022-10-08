@@ -53,6 +53,7 @@ declare module '@vue/runtime-core' {
     NInput: typeof import('naive-ui')['NInput']
     NP: typeof import('naive-ui')['NP']
     NPopselect: typeof import('naive-ui')['NPopselect']
+    NSkeleton: typeof import('naive-ui')['NSkeleton']
     NText: typeof import('naive-ui')['NText']
     NUpload: typeof import('naive-ui')['NUpload']
     NUploadDragger: typeof import('naive-ui')['NUploadDragger']

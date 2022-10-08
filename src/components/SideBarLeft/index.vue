@@ -30,7 +30,7 @@ const options = [
 </script>
 
 <template>
-  <div class="h-screen flex flex-col">
+  <div class="h-screen flex flex-col md:items-center xl:items-start">
     <div p-2 my-2 rounded-full hover:bg-blue-50 w-min tran>
       <!-- <RouterLink> -->
       <Twitter w-8 h-8 />

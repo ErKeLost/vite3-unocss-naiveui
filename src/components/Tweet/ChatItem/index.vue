@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :tweet="props.tweet" />
+    <Header :tweet="tweet" />
 
     <div :class="tweetBodyWrapper">
       <p
