@@ -115,7 +115,7 @@ const options = [
       >
         <div class="flex flex-row">
           <img
-            :src="props.user?.profileImage"
+            :src="user?.profileImage"
             class="w-10 h-10 rounded-full object-cover"
           />
           <div class="flex-col hidden ml-2 xl:block">

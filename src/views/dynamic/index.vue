@@ -6,14 +6,15 @@
       </Head> -->
 
       <div class="border-b dark:border-gray-600">
-        <ChatForm :user="user" @on-success="handleFormSuccess" />
+        <ChatForm :user="userInfo" @on-success="handleFormSuccess" />
       </div>
       <ListFeed :tweets="dynamicList" />
     </MainSection>
   </div>
 </template>
 <script setup>
-import { useDynamicStore } from '@/store'
+import { useDynamicStore, useAuthStore } from '@/store'
+const { userInfo } = storeToRefs(useAuthStore())
 const loading = ref(false)
 const { getAllDynamicList, releaseDynamic } = useDynamicStore()
 const { dynamicList } = storeToRefs(useDynamicStore())

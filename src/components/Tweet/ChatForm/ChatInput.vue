@@ -3,7 +3,7 @@
     <div class="flex items-center flex-shrink-0 p-4 pb-0">
       <div class="flex w-12 items-top">
         <img
-          src="https://w.wallhaven.cc/full/57/wallhaven-571998.png"
+          :src="user?.profileImage"
           alt=""
           class="inline-block w-10 h-10 rounded-full object-cover"
         />
