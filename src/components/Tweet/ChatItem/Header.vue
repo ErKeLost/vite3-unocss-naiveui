@@ -3,14 +3,14 @@
     <div>
       <img
         class="w-10 h-10 rounded-full object-cover"
-        :src="author.profileImage"
+        :src="author?.profileImage"
         alt=""
       />
     </div>
 
     <div class="ml-3">
       <span class="font-medium text-gray-800 dark:text-white">{{
-        author.name
+        author?.name
       }}</span>
 
       <span class="ml-3 text-sm font-medium text-gray-400">

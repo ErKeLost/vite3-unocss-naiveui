@@ -31,6 +31,7 @@ declare module '@vue/runtime-core' {
     IconMdiHome: typeof import('~icons/mdi/home')['default']
     IconMdiListBoxOutline: typeof import('~icons/mdi/list-box-outline')['default']
     IconPhChatCircleDotsFill: typeof import('~icons/ph/chat-circle-dots-fill')['default']
+    IconPhChatCircleTextThin: typeof import('~icons/ph/chat-circle-text-thin')['default']
     IconPhChatTeardropTextFill: typeof import('~icons/ph/chat-teardrop-text-fill')['default']
     IconPhHashBold: typeof import('~icons/ph/hash-bold')['default']
     IconTablerMessageCircle2: typeof import('~icons/tabler/message-circle2')['default']

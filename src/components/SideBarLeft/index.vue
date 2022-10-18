@@ -94,8 +94,8 @@ const options = [
 
       <div class="block xl:hidden">
         <UIButton @on-click="emits('onTweet')">
-          <div class="w-6 h-6 font-bold">
-            <PencilIcon />
+          <div class="font-bold">
+            <IconPhChatTeardropTextFill w-6 h-6 />
           </div>
         </UIButton>
       </div>

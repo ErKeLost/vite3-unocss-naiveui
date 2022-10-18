@@ -24,7 +24,7 @@ export const useAuthStore = defineStore(
     async function useLogin() {
       const loginRes = await signin(loginForm)
       console.log(loginRes)
-      localStorage.setItem('access_token', loginRes.access_token)
+      localStorage.setItem('access_token', loginRes.data.access_token)
     }
 
     // 用户信息
@@ -34,7 +34,7 @@ export const useAuthStore = defineStore(
     async function useUserInfo() {
       const res = await getUserInfo()
       console.log(res)
-      userInfo.value = res
+      userInfo.value = res.data
     }
 
     // 注册

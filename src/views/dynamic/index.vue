@@ -8,7 +8,7 @@
       <div class="border-b dark:border-gray-600">
         <ChatForm :user="userInfo" @on-success="handleFormSuccess" />
       </div>
-      <ListFeed :tweets="dynamicList" />
+      <ListFeed :tweets="dynamicList.data" />
     </MainSection>
   </div>
 </template>
