@@ -17,15 +17,15 @@
         <router-link to="#">
           {{ author?.handle }}
         </router-link>
-        . {{ props.tweet.postedAtHuman }}
+        . {{ tweet.postedAtHuman }}
       </span>
 
       <p v-if="props.tweet.replyTo" class="text-sm">
         <span class="text-gray-500"> Replying to </span>
 
-        <nuxt-link :to="replyToTweetUrl" class="text-blue-400">
-          {{ props.tweet.replyTo.author?.handle }}
-        </nuxt-link>
+        <!-- <router-link :to="replyToTweetUrl" class="text-blue-400">
+          {{ tweet.replyTo.author?.handle }}
+        </router-link> -->
       </p>
     </div>
   </div>

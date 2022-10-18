@@ -3,16 +3,15 @@
     <div v-if="isEmptyArray" class="p-4">
       <p class="text-center text-gray-500">No tweets 😢</p>
     </div>
-    <!-- <div
+    <div
       v-for="tweet in tweets"
       v-else
       :key="tweet.id"
-      class="pb-4 border-b dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-9"
-      :class="[, defaultTransition]"
+      class="pb-4 border-b tran dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-9"
       @click.native="redirect(tweet)"
     >
       <ChatItem :tweet="tweet" compact />
-    </div> -->
+    </div>
   </div>
 </template>
 <script setup>
