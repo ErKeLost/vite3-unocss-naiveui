@@ -29,46 +29,48 @@ async function handleLogin() {
         <div class="shadow"></div>
       </div>
     </div>
-    <div flex justify-center>
+    <div flex justify-between items-center>
       <!-- <Twitter w-15 h-15 /> -->
+      <div font-bold text-2xl>Log In</div>
+      <a
+        border-b
+        dark:border-gray-600
+        border-dark
+        border-b-dashed
+        href="#"
+        @click="isLoginType = false"
+        >没有账号 ？ 去注册</a
+      >
     </div>
     <div pt-5>
-      <span block my-3>Username</span>
       <n-input
         v-model:value="authStore.loginForm.username"
+        my-3
         type="text"
-        round
         size="large"
         placeholder="@username"
       />
-      <span block my-3>Password</span>
       <n-input
         v-model:value="authStore.loginForm.password"
+        my-3
         type="password"
-        round
         size="large"
         placeholder="*******"
       />
-      <n-button round my-10 block size="large" @click="handleLogin"
+      <n-button bg-blue type="info" my-8 block size="large" @click="handleLogin"
         >登录</n-button
       >
-      <div :class="{ shake: judgeShakeClass }">
+      <div
+        :class="{ shake: judgeShakeClass }"
+        flex
+        justify-between
+        items-center
+      >
         <n-checkbox
           v-model:checked="shakeChecked"
           size="medium"
           label="同意 《个人信息保护政策》《服务协议》"
         />
-      </div>
-      <div flex justify-between my-8>
-        <a
-          border-b
-          dark:border-gray-600
-          border-dark
-          border-b-dashed
-          href="#"
-          @click="isLoginType = false"
-          >没有账号 ？ 去注册</a
-        >
         <a border-b dark:border-gray-600 border-dark border-b-dashed href="#"
           >忘记密码
         </a>
@@ -76,10 +78,19 @@ async function handleLogin() {
       <div>
         <n-divider title-placement="center"> Or </n-divider>
       </div>
-      <div mt-20 flex justify-center gap-10 text-2xl>
-        <Twitter />
-        <Github />
-        <Vercel />
+      <div mt-10 flex justify-center gap-10 text-2xl>
+        <div py-1 flex items-center px-7 border border-gray cursor="pointer">
+          <Twitter />
+          <div pl-2 text-4>Twitter</div>
+        </div>
+        <div py-1 flex items-center px-7 border border-gray cursor="pointer">
+          <Github />
+          <div pl-2 text-4>Github</div>
+        </div>
+        <div py-1 flex items-center px-7 border border-gray cursor="pointer">
+          <Vercel />
+          <div pl-2 text-4>Vercel</div>
+        </div>
       </div>
     </div>
   </div>

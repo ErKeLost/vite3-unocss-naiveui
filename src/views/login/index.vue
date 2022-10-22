@@ -7,8 +7,8 @@ const { isLoginType } = storeToRefs(useAuthStore())
 </script>
 
 <template>
-  <div flex h-screen>
-    <div relative flex-1 hidden w-0 lg:block>
+  <div flex h-screen justify-center>
+    <!-- <div relative flex-1 hidden w-0 lg:block>
       <img
         absolute
         inset-0
@@ -18,11 +18,12 @@ const { isLoginType } = storeToRefs(useAuthStore())
         src="https://w.wallhaven.cc/full/rr/wallhaven-rr3y61.jpg"
         alt=""
       />
-    </div>
+    </div> -->
     <div
       flex
       flex-col
       justify-center
+      items-center
       flex-1
       px-4
       py-12
@@ -32,7 +33,7 @@ const { isLoginType } = storeToRefs(useAuthStore())
       xl:px-24
       relative
     >
-      <div flex items-center w-full h-full max-w-sm mx-auto lg:w-96>
+      <div flex items-center w-full h-full max-w-128 mx-auto lg:w-128>
         <transition name="bounceInDown" mode="out-in" appear>
           <component
             :is="isLoginType === true ? LoginForm : RegisterForm"
