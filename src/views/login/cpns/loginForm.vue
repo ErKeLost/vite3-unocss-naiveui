@@ -79,15 +79,42 @@ async function handleLogin() {
         <n-divider title-placement="center"> Or </n-divider>
       </div>
       <div mt-10 flex justify-center gap-10 text-2xl>
-        <div py-1 flex items-center px-7 border border-gray cursor="pointer">
+        <div
+          border-rd
+          py-1
+          flex
+          items-center
+          px-7
+          border
+          border-gray-200
+          cursor="pointer"
+        >
           <Twitter />
           <div pl-2 text-4>Twitter</div>
         </div>
-        <div py-1 flex items-center px-7 border border-gray cursor="pointer">
+        <div
+          border-rd
+          py-1
+          flex
+          items-center
+          px-7
+          border
+          border-gray-200
+          cursor="pointer"
+        >
           <Github />
           <div pl-2 text-4>Github</div>
         </div>
-        <div py-1 flex items-center px-7 border border-gray cursor="pointer">
+        <div
+          border-rd
+          py-1
+          flex
+          items-center
+          px-7
+          border
+          border-gray-200
+          cursor="pointer"
+        >
           <Vercel />
           <div pl-2 text-4>Vercel</div>
         </div>

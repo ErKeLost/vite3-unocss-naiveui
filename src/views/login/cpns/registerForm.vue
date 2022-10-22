@@ -26,7 +26,6 @@ async function handleLogin() {
       <n-input
         v-model:value="registerFrom.username"
         type="text"
-        round
         size="large"
         placeholder="@username"
       />
@@ -34,7 +33,6 @@ async function handleLogin() {
       <n-input
         v-model:value="registerFrom.email"
         type="text"
-        round
         size="large"
         placeholder="email"
       />
@@ -42,12 +40,19 @@ async function handleLogin() {
       <n-input
         v-model:value="registerFrom.password"
         type="password"
-        round
         size="large"
         placeholder="*******"
       />
       <div flex justify-between my-8 items-center>
-        <n-button w-35 @click="handleLogin">注册</n-button>
+        <n-button
+          bg-blue
+          type="info"
+          my-8
+          size="large"
+          w-35
+          @click="handleLogin"
+          >注册</n-button
+        >
         <a
           border-b
           dark:border-gray-600
