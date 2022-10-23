@@ -23,12 +23,14 @@ useUserInfo()
           </div>
 
           <!-- Main content -->
-          <main class="col-span-12 md:col-span-9 xl:col-span-6">
+          <main class="col-span-10 md:col-span-7 xl:col-span-6">
             <router-view />
           </main>
 
           <!-- Right Sidebar -->
-          <div class="hidden col-span-12 xl:col-span-4 xl:block md:col-span-3">
+          <div
+            class="hidden col-span-12 xl:col-span-4 xl:block md:block md:col-span-3"
+          >
             <div class="sticky top-0">
               <SideBarRight />
             </div>

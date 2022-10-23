@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { NAvatar, NText } from 'naive-ui'
+import Edit from '@/components/logo/Edit.vue'
+import Logout from '@/components/logo/Logout.vue'
 const emits = defineEmits(['onTweet', 'onLogout'])
 
 const props = defineProps({
@@ -7,30 +10,85 @@ const props = defineProps({
     required: true
   }
 })
+function renderCustomHeader() {
+  return h(
+    'div',
+    {
+      style:
+        'display: flex; align-items: center; padding: 12px 20px; text-align: left'
+    },
+    [
+      h(NAvatar, {
+        size: 100,
+        round: true,
+        style: 'margin-right: 12px;',
+        src: props.user?.profileImage
+      }),
+      h('div', null, [
+        h('div', { style: 'text-align: left; ' }, [
+          h(
+            'div',
+            { style: 'font-size: 20px; padding-bottom: 10px' },
+            { default: () => props.user?.username }
+          )
+        ]),
+        h('div', { style: 'display: flex; font-size: 25px' }, [
+          h(Edit, { style: 'margin-right: 12px' }),
+          h(Logout)
+        ])
+      ])
+    ]
+  )
+}
+function renderCustomText() {
+  return h(
+    'div',
+    {
+      style: 'display: flex; align-items: center; padding: 12px 20px;'
+    },
+    [
+      h('div', null, [
+        h('div', { style: 'font-size: 12px;' }, [
+          h(
+            NText,
+            { depth: 3 },
+            { default: () => '毫无疑问，你是办公室里最亮的星' }
+          )
+        ])
+      ])
+    ]
+  )
+}
 const options = [
   {
-    label: '个人设置',
-    key: 'editProfile',
-    props: {
-      onClick: () => {
-        message.success('Good!')
-      }
-    }
+    key: 'header',
+    type: 'render',
+    render: renderCustomHeader
   },
   {
-    label: '退出登录',
-    key: 'logout',
+    key: 'header',
+    type: 'render',
+    render: renderCustomText,
     props: {
       onClick: () => {
         message.success('Good!')
       }
     }
   }
+  // {
+  //   label: '退出登录',
+  //   key: 'logout',
+  //   props: {
+  //     onClick: () => {
+  //       message.success('Good!')
+  //     }
+  //   }
+  // }
 ]
 </script>
 
 <template>
-  <div class="h-screen flex flex-col md:items-center xl:items-start">
+  <div class="h-screen flex flex-col mr-5 md:items-center xl:items-start">
     <div p-2 my-2 rounded-full hover:bg-blue-50 w-min tran>
       <!-- <RouterLink> -->
       <Twitter w-8 h-8 />
@@ -104,8 +162,12 @@ const options = [
     <n-dropdown
       border-rounded
       rounded-5
-      w-50
+      w-80
+      p-5
+      h-50
+      dark:bg-black
       text-center
+      dark:color-white
       trigger="click"
       :options="options"
     >
@@ -139,4 +201,8 @@ const options = [
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.setting {
+  display: flex;
+}
+</style>
